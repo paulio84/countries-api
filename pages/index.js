@@ -1,3 +1,9 @@
+import Header from '../components/Header';
+
 export default function Index() {
-  return <div>Hello world!</div>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 }

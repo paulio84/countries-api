@@ -26,4 +26,9 @@ export default createGlobalStyle`
     font-size: 1.6rem;
     font-weight: normal;
   }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 `;
