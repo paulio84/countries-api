@@ -9,7 +9,7 @@ const StyledHeader = styled.header`
   padding: 2em 0em;
 
   .header-link {
-    font-size: 1.25em;
+    font-size: 1.125em;
     margin: 0;
   }
 
