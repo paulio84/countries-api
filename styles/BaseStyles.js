@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle, css } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
   :root {
@@ -36,14 +36,4 @@ export default createGlobalStyle`
     height: auto;
     width: 100%;
   }
-
-  .bold-text {
-    font-weight: bold;
-  }
-`;
-
-export const Container = styled.div`
-  margin: 0 auto;
-  max-width: 1024px;
-  padding: 0 1em;
 `;

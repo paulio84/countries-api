@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
+import { BoldText } from '../styles/UtilityStyles';
+
 import { numberWithCommas } from '../lib/helpers';
 
 export default function CountryCard({ countryName, population, region, capital, flag }) {
@@ -10,15 +12,15 @@ export default function CountryCard({ countryName, population, region, capital, 
       <div className="country-card__details">
         <h1 className="country-card__name">{countryName}</h1>
         <p className="country-card__detail-wrapper">
-          <span className="bold-text">Population: </span>
+          <BoldText>Population: </BoldText>
           <span className="country-card__value">{numberWithCommas(population)}</span>
         </p>
         <p className="country-card__detail-wrapper">
-          <span className="bold-text">Region: </span>
+          <BoldText>Region: </BoldText>
           <span className="country-card__value">{region}</span>
         </p>
         <p className="country-card__detail-wrapper">
-          <span className="bold-text">Capital: </span>
+          <BoldText>Capital: </BoldText>
           <span className="country-card__value">{capital}</span>
         </p>
       </div>
@@ -38,6 +40,9 @@ const StyledCountryCard = styled.div`
   border-radius: 10px;
   box-shadow: 0px 0px 0px 8px rgba(17, 21, 23, 0.1);
   font-family: 'NunitoSansLight';
+  margin-bottom: 4rem;
+  max-height: 357px;
+  max-width: 279px;
 
   .country-card__flag {
     border-top-left-radius: 10px;
