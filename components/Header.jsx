@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 
+import { Container } from '../styles/BaseStyles';
+
 const StyledHeader = styled.header`
   box-shadow: 0px 5px 10px rgba(17, 21, 23, 0.3);
   padding: 2em 0em;
@@ -18,15 +20,15 @@ const StyledHeader = styled.header`
 `;
 
 const Header = () => (
-  <>
-    <StyledHeader>
+  <StyledHeader>
+    <Container>
       <h1 className="header-link">
         <Link href="/">
           <a>Where in the world?</a>
         </Link>
       </h1>
-    </StyledHeader>
-  </>
+    </Container>
+  </StyledHeader>
 );
 
 export default Header;

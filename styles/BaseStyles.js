@@ -1,4 +1,4 @@
-import { createGlobalStyle, css } from 'styled-components';
+import styled, { createGlobalStyle, css } from 'styled-components';
 
 export default createGlobalStyle`
   :root {
@@ -31,4 +31,10 @@ export default createGlobalStyle`
     color: inherit;
     text-decoration: none;
   }
+`;
+
+export const Container = styled.div`
+  margin: 0 auto;
+  max-width: 1024px;
+  padding: 0 1em;
 `;
