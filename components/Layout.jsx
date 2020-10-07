@@ -8,7 +8,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Header />
-      <StyledMain>{children}</StyledMain>
+      <StyledMain as="main">{children}</StyledMain>
     </>
   );
 }
