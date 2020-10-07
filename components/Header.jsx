@@ -4,11 +4,12 @@ import styled from 'styled-components';
 import { Container } from '../styles/BaseStyles';
 
 const StyledHeader = styled.header`
+  background-color: var(--Blue);
   box-shadow: 0px 5px 10px rgba(17, 21, 23, 0.3);
   padding: 2em 0em;
 
   .header-link {
-    font-size: 1em;
+    font-size: 1.25em;
     margin: 0;
   }
 
