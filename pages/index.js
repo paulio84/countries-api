@@ -1,25 +1,19 @@
-import CountryCard from '../components/CountryCard';
+import CountryList from '../components/CountryList';
 import Layout from '../components/Layout';
 
-import { mapSVGToImage } from '../lib/helpers';
-
-export default function Index() {
+export default function Index({ countries }) {
   return (
     <Layout>
-      <CountryCard
-        countryName="Belgium"
-        population={11316524}
-        region="Europe"
-        capital="Brussels"
-        flag={mapSVGToImage('https://restcountries.eu/data/bel.svg')}
-      />
-      <CountryCard
-        countryName="Germany"
-        population={81922421}
-        region="Europe"
-        capital="Berlin"
-        flag={mapSVGToImage('https://restcountries.eu/data/deu.svg')}
-      />
+      <CountryList countries={countries} />
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const response = await fetch('https://restcountries.eu/rest/v2/all');
+  const countries = await response.json();
+
+  return {
+    props: { countries }
+  };
 }
