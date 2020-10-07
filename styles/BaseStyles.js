@@ -31,6 +31,15 @@ export default createGlobalStyle`
     color: inherit;
     text-decoration: none;
   }
+
+  img {
+    height: auto;
+    width: 100%;
+  }
+
+  .bold-text {
+    font-weight: bold;
+  }
 `;
 
 export const Container = styled.div`
