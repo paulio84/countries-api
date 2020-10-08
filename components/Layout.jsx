@@ -15,5 +15,8 @@ export default function Layout({ children }) {
 
 const StyledMain = styled(Container)`
   margin-top: 3rem;
-  padding: 0 3em;
+
+  @media screen and (max-width: 767px) {
+    padding: 0 3em;
+  }
 `;
