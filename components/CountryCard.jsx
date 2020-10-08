@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import { BoldText } from '../styles/UtilityStyles';
+import { BoldText } from '@/styles/UtilityStyles';
 
-import { numberWithCommas } from '../lib/helpers';
+import { numberWithCommas } from '@/lib/helpers';
 
 export default function CountryCard({ countryName, population, region, capital, flag }) {
   return (

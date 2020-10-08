@@ -1,8 +1,7 @@
-import CountryList from '../components/CountryList';
-import Layout from '../components/Layout';
+import CountryList from '@/components/CountryList';
+import Layout from '@/components/Layout';
 
 export default function Index({ countries }) {
-  console.log(countries);
   return (
     <Layout>
       <CountryList countries={countries} />

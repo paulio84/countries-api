@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 
-import { Container } from '../styles/UtilityStyles';
+import { Container } from '@/styles/UtilityStyles';
 
 const StyledHeader = styled.header`
   background-color: var(--Blue);

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import CountryCard from './CountryCard';
 
-import { mapSVGToImage } from '../lib/helpers';
+import { mapSVGToImage } from '@/lib/helpers';
 
 export default function CountryList({ countries }) {
   return (
