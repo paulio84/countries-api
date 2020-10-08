@@ -17,7 +17,7 @@ export default function CountryCard({ countryName, population, region, capital, 
         </p>
         <p className="country-card__detail-wrapper">
           <BoldText>Region: </BoldText>
-          <span className="country-card__value">{region}</span>
+          <span className="country-card__value">{region ? region : 'N/A'}</span>
         </p>
         <p className="country-card__detail-wrapper">
           <BoldText>Capital: </BoldText>
@@ -40,7 +40,12 @@ const StyledCountryCard = styled.div`
   border-radius: 10px;
   box-shadow: 0px 0px 0px 8px rgba(17, 21, 23, 0.1);
   font-family: 'NunitoSansLight';
+  transition: all 0.2s ease;
   max-height: 357px;
+
+  :hover {
+    transform: scale(1.05);
+  }
 
   .country-card__flag {
     border-top-left-radius: 10px;
