@@ -38,6 +38,7 @@ const StyledCountryList = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(279px, 1fr));
   column-gap: 6em;
+  margin-top: 4rem;
   row-gap: 4em;
 
   @media screen and (min-width: 1024px) {
