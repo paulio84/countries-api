@@ -5,7 +5,7 @@ import { Container } from '@/styles/UtilityStyles';
 
 const StyledHeader = styled.header`
   background-color: var(--Blue);
-  box-shadow: 0px 5px 10px rgba(17, 21, 23, 0.3);
+  box-shadow: 0px 0px 0px 8px rgba(17, 21, 23, 0.1);
   padding: 2em 0em;
 
   .header-link {
