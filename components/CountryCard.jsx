@@ -43,6 +43,10 @@ const StyledCountryCard = styled.div`
   transition: all 0.2s ease;
   max-height: 357px;
 
+  @media screen and (max-width: 700px) {
+    width: 279px;
+  }
+
   :hover {
     transform: scale(1.05);
   }

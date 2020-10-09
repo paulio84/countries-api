@@ -1,16 +1,35 @@
-import styled from 'styled-components';
+import { useState } from 'react';
 import { Search } from 'react-feather';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-export default function FilterSearchBox() {
+export default function FilterSearchBox({ filterCountriesBySearchTerm }) {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleInputChange = (e) => {
+    const term = e.target.value;
+    setSearchTerm(term);
+
+    filterCountriesBySearchTerm(term);
+  };
+
   return (
     <>
       <SearchBox>
         <Search />
-        <input type="text" placeholder="Search for a country..." />
+        <input
+          type="text"
+          placeholder="Search for a country..."
+          value={searchTerm}
+          onChange={handleInputChange}
+        />
       </SearchBox>
     </>
   );
 }
+FilterSearchBox.propTypes = {
+  filterCountriesBySearchTerm: PropTypes.func.isRequired
+};
 
 const SearchBox = styled.div`
   align-items: center;

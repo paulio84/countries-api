@@ -1,33 +1,40 @@
+import { useState } from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import CountryCard from './CountryCard';
+import CountryCard from '@/components/CountryCard';
+import FilterContainer from '@/components/FilterContainer';
 
 import { mapSVGToImage } from '@/lib/helpers';
 
 export default function CountryList({ countries }) {
-  return (
-    <StyledCountryList>
-      {countries &&
-        countries.map((country) => {
-          const { alpha3Code, name, population, region, capital, flag } = country;
+  const [filteredCountries, setFilteredCountries] = useState(countries);
 
-          return (
-            <Link key={alpha3Code} href={`country/${alpha3Code}`}>
-              <a>
-                <CountryCard
-                  countryName={name}
-                  population={population}
-                  region={region}
-                  capital={capital}
-                  flag={mapSVGToImage(flag)}
-                />
-              </a>
-            </Link>
-          );
-        })}
-    </StyledCountryList>
+  return (
+    <>
+      <FilterContainer countries={countries} filterCountries={setFilteredCountries} />
+      <StyledCountryList>
+        {filteredCountries &&
+          filteredCountries.map((country) => {
+            const { alpha3Code, name, population, region, capital, flag } = country;
+
+            return (
+              <Link key={alpha3Code} href={`country/${alpha3Code}`}>
+                <a>
+                  <CountryCard
+                    countryName={name}
+                    population={population}
+                    region={region}
+                    capital={capital}
+                    flag={mapSVGToImage(flag)}
+                  />
+                </a>
+              </Link>
+            );
+          })}
+      </StyledCountryList>
+    </>
   );
 }
 CountryList.propTypes = {
@@ -38,7 +45,8 @@ const StyledCountryList = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(279px, 1fr));
   column-gap: 6em;
-  margin-top: 4rem;
+  justify-items: center;
+  margin: 4rem 0;
   row-gap: 4em;
 
   @media screen and (min-width: 1024px) {
