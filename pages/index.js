@@ -5,7 +5,7 @@ import Layout from '@/components/Layout';
 export default function Index({ countries }) {
   return (
     <Layout>
-      <CountryList countries={countries.slice(0, 50)} />
+      <CountryList countries={countries} />
     </Layout>
   );
 }
