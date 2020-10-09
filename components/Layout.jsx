@@ -1,13 +1,15 @@
 import styled from 'styled-components';
 
+import FilterContainer from '@/components/FilterContainer';
 import Header from '@/components/Header';
 
 import { Container } from '@/styles/UtilityStyles';
 
-export default function Layout({ children }) {
+export default function Layout({ children, showSearchFilter }) {
   return (
     <>
       <Header />
+      {showSearchFilter && <FilterContainer />}
       <StyledMain as="main">{children}</StyledMain>
     </>
   );

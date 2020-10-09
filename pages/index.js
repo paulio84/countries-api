@@ -1,9 +1,10 @@
 import CountryList from '@/components/CountryList';
+
 import Layout from '@/components/Layout';
 
 export default function Index({ countries }) {
   return (
-    <Layout>
+    <Layout showSearchFilter>
       <CountryList countries={countries.slice(0, 50)} />
     </Layout>
   );
