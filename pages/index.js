@@ -1,12 +1,18 @@
-import CountryList from '@/components/CountryList';
+import Head from 'next/head';
 
+import CountryList from '@/components/CountryList';
 import Layout from '@/components/Layout';
 
 export default function Index({ countries }) {
   return (
-    <Layout>
-      <CountryList countries={countries} />
-    </Layout>
+    <>
+      <Head>
+        <title>React Countries | Search</title>
+      </Head>
+      <Layout>
+        <CountryList countries={countries} />
+      </Layout>
+    </>
   );
 }
 
