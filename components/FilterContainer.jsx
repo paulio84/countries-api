@@ -1,14 +1,26 @@
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
+import FilterDropdown from '@/components/FilterDropdown';
 import FilterSearchBox from '@/components/FilterSearchBox';
 
 import { debounce } from '@/lib/helpers';
 
 export default function FilterContainer({ countries, filterCountries }) {
-  const filterCountriesBySearchTerm = (filterTerm) => {
+  const [filterTerm, setFilterTerm] = useState('');
+  const [region, setRegion] = useState('All regions');
+
+  useEffect(() => {
+    filterCountriesBySearchTermAndRegion();
+  }, [filterTerm, region]);
+
+  const filterCountriesBySearchTermAndRegion = () => {
     const filteredCountries = countries.filter((country) => {
-      return country.name.includes(filterTerm);
+      if (region === 'All regions') {
+        return country.name.includes(filterTerm);
+      }
+      return country.name.includes(filterTerm) && country.region === region;
     });
 
     filterCountries(filteredCountries);
@@ -17,7 +29,13 @@ export default function FilterContainer({ countries, filterCountries }) {
   return (
     <>
       <StyledFilterContainer>
-        <FilterSearchBox filterCountriesBySearchTerm={debounce(filterCountriesBySearchTerm, 500)} />
+        <FilterSearchBox onChangeHandler={debounce(setFilterTerm, 500)} value={filterTerm} />
+        <FilterDropdown
+          onSelectHandler={setRegion}
+          region={region}
+          options={['Africa', 'Americas', 'Asia', 'Europe', 'Oceania']}
+          defaultOption="All regions"
+        />
       </StyledFilterContainer>
     </>
   );
@@ -28,5 +46,12 @@ FilterContainer.propTypes = {
 };
 
 const StyledFilterContainer = styled.div`
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
   margin-top: 4rem;
+
+  @media screen and (min-width: 600px) {
+    justify-content: space-between;
+  }
 `;

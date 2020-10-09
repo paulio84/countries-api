@@ -3,14 +3,13 @@ import { Search } from 'react-feather';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-export default function FilterSearchBox({ filterCountriesBySearchTerm }) {
-  const [searchTerm, setSearchTerm] = useState('');
+export default function FilterSearchBox({ onChangeHandler, value }) {
+  const [searchTerm, setSearchTerm] = useState(value);
 
   const handleInputChange = (e) => {
     const term = e.target.value;
     setSearchTerm(term);
-
-    filterCountriesBySearchTerm(term);
+    onChangeHandler(term);
   };
 
   return (
@@ -28,13 +27,28 @@ export default function FilterSearchBox({ filterCountriesBySearchTerm }) {
   );
 }
 FilterSearchBox.propTypes = {
-  filterCountriesBySearchTerm: PropTypes.func.isRequired
+  onChangeHandler: PropTypes.func.isRequired
 };
 
 const SearchBox = styled.div`
   align-items: center;
+  box-shadow: 0px 0px 0px 8px rgba(17, 21, 23, 0.1);
   display: flex;
+  flex-grow: 1;
   position: relative;
+
+  @media screen and (min-width: 600px) {
+    flex-grow: initial;
+    min-width: 350px;
+  }
+
+  @media screen and (min-width: 768px) {
+    min-width: 400px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    min-width: 500px;
+  }
 
   input {
     background-color: var(--Blue);
