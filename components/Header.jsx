@@ -18,8 +18,8 @@ export default function Header() {
 }
 
 const StyledHeader = styled.header`
-  background-color: var(--Blue);
-  box-shadow: 0px 0px 0px 8px rgba(17, 21, 23, 0.1);
+  background-color: var(--elements);
+  box-shadow: var(--box-shadow);
   padding: 2em 0em;
 
   .header-link {

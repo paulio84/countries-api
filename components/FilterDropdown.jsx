@@ -44,7 +44,8 @@ FilterDropdown.propTypes = {
 };
 
 const StyledFilterDropdown = styled.div`
-  box-shadow: 0px 0px 0px 8px rgba(17, 21, 23, 0.1);
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
   margin-top: 4rem;
   position: relative;
   width: 200px;
@@ -59,7 +60,7 @@ const StyledFilterDropdown = styled.div`
 
   .selector,
   .options {
-    background-color: var(--Blue);
+    background-color: var(--elements);
     border-radius: 8px;
     font-family: 'NunitoSansLight';
     font-size: 0.875em;
@@ -89,7 +90,7 @@ const StyledFilterDropdown = styled.div`
       padding: 0.75rem 0.5rem;
 
       &:hover {
-        background-color: var(--DarkBlue);
+        background-color: var(--background-color);
         cursor: pointer;
       }
     }
