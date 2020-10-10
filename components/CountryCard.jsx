@@ -40,7 +40,7 @@ const StyledCountryCard = styled.div`
   border-radius: 10px;
   box-shadow: var(--box-shadow);
   font-family: 'NunitoSansLight';
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease;
   max-height: 357px;
 
   @media screen and (max-width: 700px) {

@@ -1,18 +1,21 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 
-import { Container } from '@/styles/UtilityStyles';
+import ThemeToggle from '@/components/ThemeToggle';
+
+import { FlexContainer } from '@/styles/UtilityStyles';
 
 export default function Header() {
   return (
     <StyledHeader>
-      <Container>
+      <FlexContainer>
         <h1 className="header-link">
           <Link href="/">
             <a>Where in the world?</a>
           </Link>
         </h1>
-      </Container>
+        <ThemeToggle />
+      </FlexContainer>
     </StyledHeader>
   );
 }
