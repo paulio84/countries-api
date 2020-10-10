@@ -1,11 +1,28 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 
-import { Container } from '@/styles/UtilityStyles';
+import ThemeToggle from '@/components/ThemeToggle';
+
+import { FlexContainer } from '@/styles/UtilityStyles';
+
+export default function Header() {
+  return (
+    <StyledHeader>
+      <FlexContainer>
+        <h1 className="header-link">
+          <Link href="/">
+            <a>Where in the world?</a>
+          </Link>
+        </h1>
+        <ThemeToggle />
+      </FlexContainer>
+    </StyledHeader>
+  );
+}
 
 const StyledHeader = styled.header`
-  background-color: var(--Blue);
-  box-shadow: 0px 0px 0px 8px rgba(17, 21, 23, 0.1);
+  background-color: var(--elements);
+  box-shadow: var(--box-shadow);
   padding: 2em 0em;
 
   .header-link {
@@ -19,17 +36,3 @@ const StyledHeader = styled.header`
     }
   }
 `;
-
-const Header = () => (
-  <StyledHeader>
-    <Container>
-      <h1 className="header-link">
-        <Link href="/">
-          <a>Where in the world?</a>
-        </Link>
-      </h1>
-    </Container>
-  </StyledHeader>
-);
-
-export default Header;

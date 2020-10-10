@@ -8,6 +8,12 @@ export default createGlobalStyle`
     --DarkGray: #858585;       /* (Light Mode Input) */
     --VeryLightGray: #fafafa;  /* (Light Mode Background) */
     --White: #ffffff;          /* (Dark Mode Text & Light Mode Elements) */
+
+    /* default to dark mode*/
+    --color: var(--White);
+    --background-color: var(--DarkBlue);
+    --elements: var(--Blue);
+    --box-shadow: 0px 0px 0px 4px rgba(17, 21, 23, 0.05);
   }
 
   *, *::before, *::after {
@@ -20,8 +26,8 @@ export default createGlobalStyle`
   }
 
   body {
-    background-color: var(--DarkBlue);
-    color: var(--White);
+    background-color: var(--background-color);
+    color: var(--color);
     font-family: 'NunitoSansSemiBold';
     font-size: 1.6rem;
     font-weight: normal;
@@ -35,5 +41,12 @@ export default createGlobalStyle`
   img {
     height: auto;
     width: 100%;
+  }
+
+  .lightMode {
+    --color: var(--VeryDarkBlue);
+    --background-color: var(--VeryLightGray);
+    --elements: var(--White);
+    --box-shadow: 0px 0px 0px 4px rgba(133, 133, 133, 0.03);
   }
 `;

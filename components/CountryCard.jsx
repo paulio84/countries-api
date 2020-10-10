@@ -36,11 +36,11 @@ CountryCard.propTypes = {
 };
 
 const StyledCountryCard = styled.div`
-  background-color: var(--Blue);
+  background-color: var(--elements);
   border-radius: 10px;
-  box-shadow: 0px 0px 0px 8px rgba(17, 21, 23, 0.1);
+  box-shadow: var(--box-shadow);
   font-family: 'NunitoSansLight';
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease;
   max-height: 357px;
 
   @media screen and (max-width: 700px) {

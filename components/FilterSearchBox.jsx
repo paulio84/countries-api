@@ -32,7 +32,8 @@ FilterSearchBox.propTypes = {
 
 const SearchBox = styled.div`
   align-items: center;
-  box-shadow: 0px 0px 0px 8px rgba(17, 21, 23, 0.1);
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
   display: flex;
   flex-grow: 1;
   position: relative;
@@ -51,10 +52,10 @@ const SearchBox = styled.div`
   }
 
   input {
-    background-color: var(--Blue);
+    background-color: var(--elements);
     border-radius: 8px;
     border-width: 0;
-    color: var(--White);
+    color: var(--color);
     font-family: 'NunitoSansLight';
     font-size: 0.875em;
     outline: none;
@@ -63,7 +64,7 @@ const SearchBox = styled.div`
     width: 100%;
 
     &::placeholder {
-      color: var(--White);
+      color: var(--color);
     }
   }
 
