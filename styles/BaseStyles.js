@@ -14,6 +14,7 @@ export default createGlobalStyle`
     --background-color: var(--DarkBlue);
     --elements: var(--Blue);
     --box-shadow: 0px 0px 0px 4px rgba(17, 21, 23, 0.05);
+    --dark-box-shadow: 0px 0px 0px 4px rgba(17, 21, 23, 0.15);
   }
 
   *, *::before, *::after {
@@ -48,5 +49,6 @@ export default createGlobalStyle`
     --background-color: var(--VeryLightGray);
     --elements: var(--White);
     --box-shadow: 0px 0px 0px 4px rgba(133, 133, 133, 0.03);
+    --dark-box-shadow: 0px 0px 0px 4px rgba(133, 133, 133, 0.1);
   }
 `;
