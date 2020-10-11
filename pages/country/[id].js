@@ -1,5 +1,6 @@
 import Head from 'next/head';
 
+import CountryDetails from '@/components/CountryDetails';
 import Layout from '@/components/Layout';
 
 export default function Country({ countryData }) {
@@ -8,7 +9,9 @@ export default function Country({ countryData }) {
       <Head>
         <title>React Countries | {countryData.name}</title>
       </Head>
-      <Layout></Layout>
+      <Layout>
+        <CountryDetails data={countryData} />
+      </Layout>
     </>
   );
 }
