@@ -23,6 +23,7 @@ export default function FilterSearchBox({ onChangeHandler, value }) {
             value={searchTerm}
             onChange={handleInputChange}
             name="search"
+            id="search"
           />
         </label>
       </SearchBox>
