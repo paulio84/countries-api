@@ -53,26 +53,53 @@ CountryDetails.propTypes = {
 };
 
 const StyledCountryDetails = styled.div`
+  @media screen and (min-width: 1024px) {
+    grid-row-start: 2;
+    grid-row-end: 12;
+  }
+
   h1 {
+    font-family: 'NunitoSansSemiBold';
     font-size: 1.5em;
     margin-top: 6rem;
+
+    @media screen and (min-width: 1024px) {
+      margin-top: 0;
+    }
   }
   h2 {
+    font-family: 'NunitoSansSemiBold';
     font-size: 1.125em;
   }
 `;
 
 const DetailContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  font-size: 0.875em;
   margin-bottom: 5rem;
+
+  @media screen and (min-width: 1024px) {
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    margin-bottom: 3rem;
+  }
 
   > * {
     margin-top: 1rem;
+    @media screen and (min-width: 1024px) {
+      margin: 0.75rem 0;
+    }
+    @media screen and (min-width: 1366px) {
+      margin: 1.2rem 0;
+    }
   }
 
   > :nth-child(5) {
-    margin-bottom: 5rem;
+    @media screen and (max-width: 1023px) {
+      // on tablet or below
+      margin-bottom: 5rem;
+    }
   }
 `;
 
