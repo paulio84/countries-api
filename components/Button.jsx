@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-export default function Button({ iconLeft, iconRight, clickHandler, children, isSmall }) {
+export default function Button({ iconLeft, iconRight, clickHandler, children, className }) {
   const IconLeft = withIconClass(iconLeft);
   const IconRight = withIconClass(iconRight);
 
   return (
-    <StyledButton isSmall={isSmall} onClick={clickHandler}>
+    <StyledButton className={className} onClick={clickHandler}>
       {IconLeft && <IconLeft />}
       {children}
       {IconRight && <IconRight />}
@@ -16,7 +16,7 @@ export default function Button({ iconLeft, iconRight, clickHandler, children, is
 Button.propTypes = {
   iconLeft: PropTypes.object,
   iconRight: PropTypes.object,
-  clickHandler: PropTypes.func.isRequired
+  clickHandler: PropTypes.func
 };
 
 function withIconClass(WrappedComponent) {
@@ -38,9 +38,8 @@ const StyledButton = styled.button`
   cursor: pointer;
   display: flex;
   font-family: 'NunitoSansLight';
-  margin-top: ${({ isSmall }) => (isSmall ? '0' : '4rem')};
   outline: none;
-  padding: ${({ isSmall }) => (isSmall ? '0.25em 1em' : '0.5em 1.75em')};
+  padding: 0.5em 1.75em;
 
   &:hover {
     box-shadow: var(--dark-box-shadow);
