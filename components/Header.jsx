@@ -23,7 +23,11 @@ export default function Header() {
 const StyledHeader = styled.header`
   background-color: var(--elements);
   box-shadow: var(--box-shadow);
-  padding: 2em 0em;
+  padding: 1em 0em;
+
+  @media screen and (min-width: 1024px) {
+    padding: 2em 0em;
+  }
 
   .header-link {
     font-size: 1.125em;
