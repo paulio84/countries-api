@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import { BoldText } from '@/styles/UtilityStyles';
-
 import { numberWithCommas } from '@/lib/helpers';
+
+import Detail from '@/components/Detail';
 
 export default function CountryCard({ countryName, population, region, capital, flag }) {
   return (
@@ -11,18 +11,21 @@ export default function CountryCard({ countryName, population, region, capital, 
       <img className="country-card__flag" src={flag} alt={`${countryName} flag`} />
       <div className="country-card__details">
         <h1 className="country-card__name">{countryName}</h1>
-        <p className="country-card__detail-wrapper">
-          <BoldText>Population: </BoldText>
-          <span className="country-card__value">{numberWithCommas(population)}</span>
-        </p>
-        <p className="country-card__detail-wrapper">
-          <BoldText>Region: </BoldText>
-          <span className="country-card__value">{region ? region : 'N/A'}</span>
-        </p>
-        <p className="country-card__detail-wrapper">
-          <BoldText>Capital: </BoldText>
-          <span className="country-card__value">{capital ? capital : 'N/A'}</span>
-        </p>
+        <Detail
+          className="country-card__detail-wrapper"
+          label="Population: "
+          data={numberWithCommas(population)}
+        />
+        <Detail
+          className="country-card__detail-wrapper"
+          label="Region: "
+          data={region ? region : 'N/A'}
+        />
+        <Detail
+          className="country-card__detail-wrapper"
+          label="Capital: "
+          data={capital ? capital : 'N/A'}
+        />
       </div>
     </StyledCountryCard>
   );

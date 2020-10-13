@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 
 import { BoldText } from '@/styles/UtilityStyles';
 
-export default function Detail({ label, data }) {
+export default function Detail({ label, data, className }) {
   return (
-    <p>
+    <p className={className}>
       <BoldText>{label}</BoldText>
       <span>{data}</span>
     </p>
@@ -12,5 +12,6 @@ export default function Detail({ label, data }) {
 }
 Detail.propTypes = {
   label: PropTypes.string.isRequired,
-  data: PropTypes.any.isRequired
+  data: PropTypes.any.isRequired,
+  className: PropTypes.string
 };
