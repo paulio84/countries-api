@@ -16,12 +16,15 @@ export default function FilterSearchBox({ onChangeHandler, value }) {
     <>
       <SearchBox>
         <Search />
-        <input
-          type="text"
-          placeholder="Search for a country..."
-          value={searchTerm}
-          onChange={handleInputChange}
-        />
+        <label htmlFor="search">
+          <input
+            type="text"
+            placeholder="Search for a country..."
+            value={searchTerm}
+            onChange={handleInputChange}
+            name="search"
+          />
+        </label>
       </SearchBox>
     </>
   );
@@ -49,6 +52,10 @@ const SearchBox = styled.div`
 
   @media screen and (min-width: 1024px) {
     min-width: 500px;
+  }
+
+  label {
+    width: 100%;
   }
 
   input {
