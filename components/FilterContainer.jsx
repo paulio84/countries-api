@@ -17,10 +17,12 @@ export default function FilterContainer({ countries, filterCountries }) {
 
   const filterCountriesBySearchTermAndRegion = () => {
     const filteredCountries = countries.filter((country) => {
+      const countryName = country.name.toLowerCase();
+
       if (region === 'All regions') {
-        return country.name.includes(filterTerm);
+        return countryName.includes(filterTerm.toLowerCase());
       }
-      return country.name.includes(filterTerm) && country.region === region;
+      return countryName.includes(filterTerm.toLowerCase()) && country.region === region;
     });
 
     filterCountries(filteredCountries);
