@@ -45,10 +45,7 @@ const StyledCountryCard = styled.div`
   font-family: 'NunitoSansLight';
   transition: transform 0.2s ease;
   max-height: 357px;
-
-  @media screen and (max-width: 700px) {
-    width: 279px;
-  }
+  width: 279px;
 
   :hover {
     transform: scale(1.05);
