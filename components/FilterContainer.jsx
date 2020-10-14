@@ -9,7 +9,8 @@ import { debounce } from '@/lib/helpers';
 
 export default function FilterContainer({ countries, filterCountries }) {
   const [filterTerm, setFilterTerm] = useState('');
-  const [region, setRegion] = useState('all regions');
+  const [region, setRegion] = useState('All regions');
+  const ALL_REGIONS_LOWER = 'all regions';
 
   useEffect(() => {
     filterCountriesBySearchTermAndRegion();
@@ -20,7 +21,7 @@ export default function FilterContainer({ countries, filterCountries }) {
       const countryName = country.name.toLowerCase();
       const countryRegion = country.region.toLowerCase();
 
-      if (region.toLowerCase() === 'all regions') {
+      if (region.toLowerCase() === ALL_REGIONS_LOWER) {
         return countryName.includes(filterTerm);
       }
       return countryName.includes(filterTerm) && countryRegion === region.toLowerCase();
