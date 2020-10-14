@@ -9,7 +9,7 @@ export default function FilterSearchBox({ onChangeHandler, value }) {
   const handleInputChange = (e) => {
     const term = e.target.value;
     setSearchTerm(term);
-    onChangeHandler(term);
+    onChangeHandler(term.toLowercase());
   };
 
   return (
